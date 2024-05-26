@@ -1,0 +1,23 @@
+[Desktop Entry]
+Actions=
+Categories=GNOME;GTK;Settings;X-GNOME-Settings-Panel;
+Comment[pt_BR]=Gnome Wallpapers
+Comment=Gnome Wallpapers
+Exec=nohup gnome-walls '&'
+GenericName[pt_BR]=
+GenericName=
+Icon=mini.xterm
+Keywords=
+MimeType=
+Name[pt_BR]=Gnome-Walls
+Name=Gnome-Walls
+OnlyShowIn=GNOME;Unity;
+Path=
+StartupNotify=false
+StartupWMClass=
+Terminal=false
+TerminalOptions=
+TryExec=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,36 @@
+ 
+#!/bin/bash
+
+## Opções:
+# gsettings list-keys org.gnome.desktop.background
+# color-shading-type: 'horizontal', 'vertical', 'solid'
+# picture-opacity: '0-100', Padrão 100
+# picture-options:  'none' (blank screen/ color black), 'wallpaper', 'centered', 'scaled', 'stretched', 'zoom', 'spanned'
+# picture-uri: "file://arquivo"
+# picture-uri-dark: "file://arquivo"
+# primary-color: '#3465a4', padrão '#023c88'
+# secondary-color: '#000000', padrão '#5789ca'
+# show-desktop-icons: padrão 'false', 'true'
+
+# Resetar opções:
+# gsettings reset org.gnome.desktop.background opção
+
+# Resetar tudo:
+# gsettings reset-recursively org.gnome.desktop.background
+
+TIME='900' # Tempo, em segundos
+walls_dir="$HOME/Imagens/Wallpapers/" # Pasta alvo das imagens para Wallpapers
+
+walls(){
+
+for i in `seq "$TIME" -1 1` ; do echo -ne "$i Seg.\r" ; sleep 1 ; done
+clear
+selection=$(find $walls_dir -type f -name "*.jpg" -o -name "*.png" | shuf -n1)
+echo -e "Wallpaper selecionado: $selection"
+gsettings set org.gnome.desktop.background picture-opacity '10'
+gsettings set org.gnome.desktop.background picture-options 'scaled'
+gsettings set org.gnome.desktop.background picture-uri-dark "file://$selection"
+
+walls
+}
+walls
